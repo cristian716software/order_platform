@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: payment-processor
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  observations:
+    annotations:
+      enabled: true
+
+logging:
+  pattern:
+    correlation: "[%X{traceId:-},%X{spanId:-}]"
+
+server:
+  port: 8085

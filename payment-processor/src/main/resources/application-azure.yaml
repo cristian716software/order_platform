@@ -1,0 +1,15 @@
+azure:
+  cosmos:
+    endpoint: ${COSMOS_URI}
+    key: ${COSMOS_KEY}
+    database: orders-db
+    container: orders
+  storage:
+    queue:
+      connection-string: ${QUEUE_CONNECTION_STRING}
+      queue-name: orders-queue
+
+    blob:
+      connection-string: DefaultEndpointsProtocol=https;AccountName=microservicesstoragedev;AccountKey=PKyBHvwg01wOTlu9TZuQYaFX3Rht28/9TA9TURV4ESNtHicoYh8WzMnEZahJgAgM09/Z6L1jE18b+AStWgm/vA==;EndpointSuffix=core.windows.net
+      container-name: order-audit
+
