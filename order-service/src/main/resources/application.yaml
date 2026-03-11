@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: order-service
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+  observations:
+    annotations:
+      enabled: true
+
+logging:
+  pattern:
+    correlation: "[%X{traceId:-},%X{spanId:-}]"

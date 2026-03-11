@@ -1,0 +1,5 @@
+azure:
+  storage:
+    queue:
+      connection-string: DefaultEndpointsProtocol=https;AccountName=microservicesstoragedev;AccountKey=PKyBHvwg01wOTlu9TZuQYaFX3Rht28/9TA9TURV4ESNtHicoYh8WzMnEZahJgAgM09/Z6L1jE18b+AStWgm/vA==;EndpointSuffix=core.windows.net
+      queue-name: orders-queue
