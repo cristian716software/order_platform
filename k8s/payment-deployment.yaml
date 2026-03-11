@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-processor
+  namespace: microservices
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: payment-processor
+  template:
+    metadata:
+      labels:
+        app: payment-processor
+    spec:
+      containers:
+        - name: payment-processor
+          image: orderplatformregistry-bncxdcc9bafjfkcu.azurecr.io/payment-processor:1.0
+          ports:
+            - containerPort: 8081
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: azure
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-processor
+  namespace: microservices
+spec:
+  selector:
+    app: payment-processor
+  ports:
+    - port: 80
+      targetPort: 8081
+  type: ClusterIP
